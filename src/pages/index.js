@@ -1,41 +1,44 @@
 import Head from 'next/head'
+import { Box, Heading, Text, Select, Button } from '@chakra-ui/react'
 import HomeIllustration from '../images/home.svg'
 
 export default function Home() {
   return (
-    <main className="p-6">
+    <Box p="6">
       <Head>
         <title>Informasi Shelter Isolasi Covid-19</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="py-8">
-        <HomeIllustration className="mx-auto" />
-      </div>
+      <Box py="6">
+        <HomeIllustration style={{margin: '0 auto'}} />
+      </Box>
 
-      <h1 className="mb-4 text-2xl font-bold">
-        Temukan Tempat <span className="text-blue-500">Isolasi COVID-19</span><br />
+      <Heading as="h1" fontSize="2xl" mb="4">
+        Temukan Tempat <Text as="span" color="blue.500">Isolasi COVID-19</Text><br />
         di dekatmu
-      </h1>
+      </Heading>
 
-      <p className="mb-8 text-gray-400">
+      <Text mb="8" color="gray.400">
         Temukan shelter untuk Isolasi Mandiri bagi pasien positif COVID-19 (dengan gejala ringan dan sedang).
-      </p>
+      </Text>
 
-      <select className="w-full py-3 px-4 bg-gray-100 rounded-xl mb-4">
+      <Select variant="filled" placeholder="Pilih Provinsi" mb="4">
         <option value="1">Yogyakarta</option>
         <option value="1">Jawa Tengah</option>
-      </select>
+      </Select>
 
-      <select className="w-full py-3 px-4 bg-gray-100 rounded-xl mb-4">
+      <Select variant="filled" placeholder="Pilih Kota/Kabupaten" mb="4">
         <option value="">Kota Yogyakarta</option>
         <option value="">Sleman</option>
         <option value="">Bantul</option>
         <option value="">Kulonprogo</option>
         <option value="">Gunungkidul</option>
-      </select>
+      </Select>
 
-      <button className="w-full py-3 px-4 bg-blue-500 text-white text-center font-bold rounded-full">Cari Tempat Isolasi Terdekat</button>
-    </main>
+      <Button colorScheme="blue" size="lg" borderRadius="full" w="full">
+        Cari Tempat Isolasi Terdekat
+      </Button>
+    </Box>
   )
 }
